@@ -1,0 +1,34 @@
+Category,Operation,Iterations,Median (us),P95 (us),Mean (us),Min (us),Max (us),StdDev (us)
+Key Exchange,X25519 Key Generation,50,54.10,56.20,54.85,53.50,71.70,2.74
+Key Exchange,X25519 Shared Secret Derivation,50,96.90,106.40,98.87,95.60,128.30,5.33
+Key Encapsulation,ML-KEM-1024 Key Generation,50,482.60,666.40,492.41,350.10,826.40,103.83
+Key Encapsulation,ML-KEM-1024 Encapsulation,50,137.10,160.40,136.30,114.00,183.80,12.40
+Key Encapsulation,ML-KEM-1024 Decapsulation,50,397.10,675.20,420.90,389.80,708.40,74.47
+Digital Signature,Ed25519 Key Generation,50,56.95,67.60,58.82,54.70,74.10,4.43
+Digital Signature,Ed25519 Signing,50,98.75,158.90,108.45,96.50,257.50,29.00
+Digital Signature,Ed25519 Verification,50,147.30,230.20,163.72,140.30,243.30,31.18
+Digital Signature (PQC),SLH-DSA Key Generation,15,18717.30,24353.00,19532.01,17603.80,24353.00,2135.05
+Digital Signature (PQC),SLH-DSA Signing,15,1067747.20,5097657.10,1417059.46,225810.00,5097657.10,1357045.16
+Digital Signature (PQC),SLH-DSA Verification,15,71318.60,134985.60,81514.87,59643.70,134985.60,22168.81
+Key Derivation,HKDF-SHA256 Key Derivation,50,37.65,56.70,44.93,33.70,273.60,33.80
+Symmetric Encryption,AES-256-GCM Encrypt (64 B),50,24.55,32.30,27.99,23.00,146.60,17.40
+Symmetric Encryption,AES-256-GCM Decrypt (64 B),50,23.95,40.70,28.28,21.50,167.70,21.39
+Symmetric Encryption,AES-256-GCM Encrypt (256 B),50,26.50,42.10,30.91,24.10,151.30,19.90
+Symmetric Encryption,AES-256-GCM Decrypt (256 B),50,23.60,28.80,25.18,22.10,76.10,7.54
+Symmetric Encryption,AES-256-GCM Encrypt (1024 B),50,24.35,36.70,28.67,15.20,226.30,29.12
+Symmetric Encryption,AES-256-GCM Decrypt (1024 B),50,23.95,29.30,25.48,22.70,58.80,5.65
+Symmetric Encryption,AES-256-GCM Encrypt (4096 B),50,30.45,78.90,41.31,28.10,259.10,34.65
+Symmetric Encryption,AES-256-GCM Decrypt (4096 B),50,31.35,86.40,40.62,27.90,206.60,29.59
+Protocol Handshake,Total Hybrid Handshake Latency,15,2318993.40,2759849.80,2306897.80,2043015.50,2759849.80,194584.59
+Message Flow,Secure Message Encrypt (64 B),50,99.50,183.50,110.94,95.20,271.70,31.68
+Message Flow,Simulated Datalink Transport (64 B),50,1.60,5.80,2.11,1.50,13.80,1.96
+Message Flow,Secure Message Decrypt (64 B),50,101.05,213.40,111.34,80.90,250.50,34.70
+Message Flow,Secure Message Encrypt (256 B),50,116.60,362.90,147.46,97.50,577.10,94.11
+Message Flow,Simulated Datalink Transport (256 B),50,1.80,6.60,2.66,1.50,18.20,2.65
+Message Flow,Secure Message Decrypt (256 B),50,101.15,222.40,118.15,88.70,475.70,62.92
+Message Flow,Secure Message Encrypt (1024 B),50,112.95,168.10,121.02,104.00,267.40,26.68
+Message Flow,Simulated Datalink Transport (1024 B),50,1.70,7.60,2.55,1.50,17.80,2.68
+Message Flow,Secure Message Decrypt (1024 B),50,113.80,150.10,116.00,92.00,183.60,19.80
+Message Flow,Secure Message Encrypt (4096 B),50,138.35,186.60,147.38,122.60,254.80,23.10
+Message Flow,Simulated Datalink Transport (4096 B),50,1.60,7.00,2.35,1.50,20.80,2.90
+Message Flow,Secure Message Decrypt (4096 B),50,102.45,311.30,138.41,96.70,818.80,110.90

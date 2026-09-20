@@ -1,0 +1,12 @@
+import { useState } from 'react'
+import { AppLayout, type Page } from './layouts/AppLayout'
+import { api } from './services/api'
+import { useApi } from './hooks/useApi'
+import { Overview } from './pages/Overview'
+import { Protocol } from './pages/Protocol'
+import { Pipeline } from './pages/Pipeline'
+import { Policy } from './pages/Policy'
+import { Security } from './pages/Security'
+import { Performance } from './pages/Performance'
+import { Experiments } from './pages/Experiments'
+export default function App() { const [page, setPage] = useState<Page>('overview'); const health = useApi(api.health); const state = health.loading ? 'loading' : health.data?.status === 'healthy' ? 'online' : 'failed'; const content = { overview: <Overview />, protocol: <Protocol />, pipeline: <Pipeline />, policy: <Policy />, security: <Security />, performance: <Performance />, experiments: <Experiments /> }[page]; return <AppLayout page={page} setPage={setPage} apiState={state}>{content}</AppLayout> }
