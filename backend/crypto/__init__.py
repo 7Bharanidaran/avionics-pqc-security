@@ -52,6 +52,42 @@ from .x25519 import (
     generate_keypair as x25519_generate_keypair,
     public_key_from_private_key as x25519_public_key_from_private_key,
 )
+from .adaptive_base import (
+    AdaptiveSession,
+    BaseAdaptiveConstruction,
+    ConstructionAuthenticationError,
+    ConstructionDowngradeError,
+    ConstructionError,
+    ConstructionMetadata,
+    ConstructionReplayError,
+    ConstructionSecurityLevel,
+)
+from .adaptive_standard import (
+    METADATA_STANDARD,
+    ADAPTIVE_STANDARD,
+    AdaptiveStandardConstruction,
+)
+from .adaptive_balanced import (
+    METADATA_BALANCED,
+    ADAPTIVE_BALANCED,
+    AdaptiveBalancedConstruction,
+)
+from .adaptive_high_assurance import (
+    METADATA_HIGH_ASSURANCE,
+    ADAPTIVE_HIGH_ASSURANCE,
+    AdaptiveHighAssuranceConstruction,
+)
+from .adaptive_critical import (
+    METADATA_CRITICAL,
+    ADAPTIVE_CRITICAL,
+    AdaptiveCriticalConstruction,
+)
+from .construction_engine import (
+    CONSTRUCTION_ENGINE,
+    ConstructionConstraintCheck,
+    ConstructionDecision,
+    ConstructionEngine,
+)
 
 __all__ = [
     # X25519
@@ -89,4 +125,32 @@ __all__ = [
     "aes_gcm_decrypt",
     "AESGCMError",
     "AuthenticationTagError",
+    # Adaptive Constructions Base
+    "AdaptiveSession",
+    "BaseAdaptiveConstruction",
+    "ConstructionAuthenticationError",
+    "ConstructionDowngradeError",
+    "ConstructionError",
+    "ConstructionMetadata",
+    "ConstructionReplayError",
+    "ConstructionSecurityLevel",
+    # Specific Adaptive Constructions
+    "AdaptiveStandardConstruction",
+    "ADAPTIVE_STANDARD",
+    "METADATA_STANDARD",
+    "AdaptiveBalancedConstruction",
+    "ADAPTIVE_BALANCED",
+    "METADATA_BALANCED",
+    "AdaptiveHighAssuranceConstruction",
+    "ADAPTIVE_HIGH_ASSURANCE",
+    "METADATA_HIGH_ASSURANCE",
+    "AdaptiveCriticalConstruction",
+    "ADAPTIVE_CRITICAL",
+    "METADATA_CRITICAL",
+    # Construction Selection Engine
+    "ConstructionEngine",
+    "ConstructionDecision",
+    "ConstructionConstraintCheck",
+    "CONSTRUCTION_ENGINE",
 ]
+

@@ -1,0 +1,38 @@
+{
+  "status": "SUCCESS",
+  "total_tests": 3,
+  "total_adversarial_downgrades_blocked": 3,
+  "robustness_score_pct": 100.0,
+  "tests": [
+    {
+      "test_name": "Stealthy Zero-Attack Spoofing on Safety-Critical Command",
+      "input_criticality": "SAFETY_CRITICAL",
+      "ai_threat_level": "NORMAL",
+      "ai_threat_score": 10.07,
+      "selected_construction": "ADAPTIVE-CRITICAL-V1",
+      "safety_override_triggered": true,
+      "adversarial_downgrade_blocked": true,
+      "explainable_reason": "Mode C: Initial profile established: ADAPTIVE-CRITICAL-V1."
+    },
+    {
+      "test_name": "High Noise Feature Suppression during Active Jamming",
+      "input_criticality": "CRITICAL",
+      "ai_threat_level": "NORMAL",
+      "ai_threat_score": 19.48,
+      "selected_construction": "ADAPTIVE-CRITICAL-V1",
+      "safety_override_triggered": true,
+      "adversarial_downgrade_blocked": true,
+      "explainable_reason": "Mode C: Anti-oscillation hold active: candidate ADAPTIVE-HIGH-ASSURANCE-V1 requires lower assurance than active ADAPTIVE-CRITICAL-V1. Retaining ADAPTIVE-CRITICAL-V1 (dwell count 1/3)."
+    },
+    {
+      "test_name": "Extreme Latency Budget Attack (Denial of Service attempt)",
+      "input_criticality": "ROUTINE",
+      "ai_threat_level": "NORMAL",
+      "ai_threat_score": 8.73,
+      "selected_construction": "ADAPTIVE-CRITICAL-V1",
+      "safety_override_triggered": false,
+      "adversarial_downgrade_blocked": true,
+      "explainable_reason": "Mode C: Anti-oscillation hold active: candidate ADAPTIVE-STANDARD-V1 requires lower assurance than active ADAPTIVE-CRITICAL-V1. Retaining ADAPTIVE-CRITICAL-V1 (dwell count 2/3)."
+    }
+  ]
+}

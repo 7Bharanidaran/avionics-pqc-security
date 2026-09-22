@@ -224,3 +224,99 @@ class PolicyMetricsResponse(BaseModel):
     constraint_conflicts: int
     blocked_downgrades: int
     average_decision_time_ms: float
+
+
+# =====================================================================
+# Adaptive Cryptographic Constructions Schemas
+# =====================================================================
+
+
+class AdaptiveConstructionMetadataResponse(BaseModel):
+    """Metadata response schema for an adaptive cryptographic construction."""
+
+    construction_id: str
+    security_level: str
+    description: str
+    primitives: dict[str, Any]
+    constraints: dict[str, bool]
+    target_latency_budget_ms: float
+    allowed_criticalities: list[str]
+    allowed_threat_levels: list[str]
+
+
+class AdaptiveConstructionSelectRequest(BaseModel):
+    """Request payload for deterministic construction selection."""
+
+    criticality: str = Field(default="ROUTINE", description="Message criticality (ROUTINE, IMPORTANT, CRITICAL, SAFETY_CRITICAL)")
+    threat_level: str = Field(default="NORMAL", description="Threat level (NORMAL, ELEVATED, HIGH, CRITICAL)")
+    threat_score: Optional[float] = Field(None, description="Continuous threat score (0-100 or 0.0-1.0)")
+    latency_budget_ms: float = Field(default=5000.0, description="Latency budget in milliseconds")
+
+
+class AdaptiveConstructionDecisionResponse(BaseModel):
+    """Response payload representing a construction selection decision and safety audit."""
+
+    status: str
+    selected_construction_id: Optional[str]
+    security_level: Optional[str]
+    criticality: str
+    threat_level: str
+    threat_score: Optional[float]
+    latency_budget_ms: float
+    estimated_latency_ms: Optional[float]
+    reason: str
+    constraints: list[PolicyConstraintResponse]
+    downgrade_blocked: bool
+    decision_time_ms: float
+
+
+class AdaptiveHandshakeRequest(BaseModel):
+    """Request payload to execute an adaptive cryptographic handshake between two avionics entities."""
+
+    initiator: str = Field(default="FCC", description="Initiator entity ID or alias (e.g. 'FCC', 'AIRCRAFT-001-FCC')")
+    responder: str = Field(default="GCS", description="Responder entity ID or alias (e.g. 'GCS', 'GROUND-STATION-001')")
+    construction_id: Optional[str] = Field(None, description="Explicit construction override (e.g. 'ADAPTIVE-HIGH-ASSURANCE-V1')")
+    criticality: str = Field(default="ROUTINE", description="Traffic criticality")
+    threat_level: str = Field(default="NORMAL", description="Operational threat level")
+    threat_score: Optional[float] = Field(None, description="Threat score")
+    latency_budget_ms: float = Field(default=5000.0, description="Latency budget in milliseconds")
+
+
+class AdaptiveHandshakeResponse(BaseModel):
+    """Response payload containing established session details, audit trace, and selection rationale."""
+
+    status: str
+    session_id: str
+    construction_id: str
+    security_level: str
+    initiator_id: str
+    responder_id: str
+    negotiated_algorithms: dict[str, Any]
+    trace: list[dict[str, str]]
+    decision: AdaptiveConstructionDecisionResponse
+    handshake_time_ms: float
+
+
+class AdaptiveMessageRequest(BaseModel):
+    """Request payload to transmit an authenticated message over an active adaptive session."""
+
+    sender: str = Field(default="FCC", description="Sender entity alias")
+    receiver: str = Field(default="GCS", description="Receiver entity alias")
+    session_id: str = Field(..., description="Active session ID")
+    construction_id: str = Field(..., description="Construction ID")
+    message_type: str = Field(default="AIRCRAFT_STATUS", description="Avionics message type")
+    payload: dict[str, Any] = Field(default_factory=dict, description="Arbitrary message telemetry/command payload")
+
+
+class AdaptiveMessageResponse(BaseModel):
+    """Response payload containing encrypted envelope metrics and decrypted telemetry verification."""
+
+    status: str
+    message_id: str
+    session_id: str
+    construction_id: str
+    envelope: dict[str, Any]
+    decrypted_payload: dict[str, Any]
+    encryption_time_ms: float
+    decryption_time_ms: float
+

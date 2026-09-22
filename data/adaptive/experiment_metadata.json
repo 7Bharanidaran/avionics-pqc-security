@@ -1,0 +1,22 @@
+{
+  "timestamp": "2026-09-21 18:15:15 UTC",
+  "framework": "Avionics PQC Security Lab (Phase 10B)",
+  "reproducibility_command": "python -m backend.experiments.adaptive_benchmark",
+  "benchmark_iterations_per_construction": 3,
+  "total_security_attacks_evaluated": 40,
+  "ai_dataset_size": 200,
+  "ai_threat_distribution": {
+    "NORMAL": 20,
+    "ELEVATED": 40,
+    "HIGH": 100,
+    "CRITICAL": 40
+  },
+  "exported_files": {
+    "benchmarks_json": "adaptive_construction_benchmarks.json",
+    "benchmarks_csv": "adaptive_construction_benchmarks.csv",
+    "security_json": "security_evaluation.json",
+    "security_csv": "security_evaluation.csv",
+    "ai_dataset_json": "ai_training_dataset.json",
+    "ai_dataset_csv": "ai_training_dataset.csv"
+  }
+}

@@ -1,0 +1,359 @@
+{
+  "model_name": "Avionics PQC AI Threat Prediction Engine",
+  "version": "1.0.0",
+  "training_timestamp": "2026-09-21T14:15:00.195347+00:00",
+  "dataset_path": "data\\adaptive\\ai_training_dataset.csv",
+  "dataset_version": "1.0.0",
+  "dataset_size": 600,
+  "feature_count": 14,
+  "features": [
+    "message_type",
+    "criticality",
+    "criticality_rank",
+    "latency_budget_ms",
+    "observed_packet_rate_hz",
+    "replay_attempt_count",
+    "auth_failure_count",
+    "integrity_failure_count",
+    "aad_tamper_count",
+    "transcript_anomaly_count",
+    "routing_error_count",
+    "channel_bit_error_rate",
+    "prior_security_events_window",
+    "anomaly_score_raw"
+  ],
+  "target_variables": [
+    "threat_level",
+    "threat_score",
+    "threat_level_numeric",
+    "confidence",
+    "recommended_min_assurance"
+  ],
+  "classes": [
+    "NORMAL",
+    "ELEVATED",
+    "HIGH",
+    "CRITICAL"
+  ],
+  "best_classifier": "LogisticRegression",
+  "best_regressor": "RandomForestRegressor",
+  "xgboost_available": true,
+  "random_seed": 42,
+  "test_metrics": {
+    "classification": {
+      "LogisticRegression": {
+        "accuracy": 1.0,
+        "precision_macro": 1.0,
+        "precision_weighted": 1.0,
+        "recall_macro": 1.0,
+        "recall_weighted": 1.0,
+        "f1_macro": 1.0,
+        "f1_weighted": 1.0,
+        "confusion_matrix": [
+          [
+            9,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            18,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            45,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            18
+          ]
+        ],
+        "per_class": {
+          "NORMAL": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1_score": 1.0,
+            "support": 9
+          },
+          "ELEVATED": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1_score": 1.0,
+            "support": 18
+          },
+          "HIGH": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1_score": 1.0,
+            "support": 45
+          },
+          "CRITICAL": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1_score": 1.0,
+            "support": 18
+          }
+        },
+        "classes": [
+          "NORMAL",
+          "ELEVATED",
+          "HIGH",
+          "CRITICAL"
+        ]
+      },
+      "RandomForest": {
+        "accuracy": 1.0,
+        "precision_macro": 1.0,
+        "precision_weighted": 1.0,
+        "recall_macro": 1.0,
+        "recall_weighted": 1.0,
+        "f1_macro": 1.0,
+        "f1_weighted": 1.0,
+        "confusion_matrix": [
+          [
+            9,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            18,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            45,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            18
+          ]
+        ],
+        "per_class": {
+          "NORMAL": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1_score": 1.0,
+            "support": 9
+          },
+          "ELEVATED": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1_score": 1.0,
+            "support": 18
+          },
+          "HIGH": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1_score": 1.0,
+            "support": 45
+          },
+          "CRITICAL": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1_score": 1.0,
+            "support": 18
+          }
+        },
+        "classes": [
+          "NORMAL",
+          "ELEVATED",
+          "HIGH",
+          "CRITICAL"
+        ]
+      },
+      "XGBoost": {
+        "accuracy": 1.0,
+        "precision_macro": 1.0,
+        "precision_weighted": 1.0,
+        "recall_macro": 1.0,
+        "recall_weighted": 1.0,
+        "f1_macro": 1.0,
+        "f1_weighted": 1.0,
+        "confusion_matrix": [
+          [
+            9,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            18,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            45,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            18
+          ]
+        ],
+        "per_class": {
+          "NORMAL": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1_score": 1.0,
+            "support": 9
+          },
+          "ELEVATED": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1_score": 1.0,
+            "support": 18
+          },
+          "HIGH": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1_score": 1.0,
+            "support": 45
+          },
+          "CRITICAL": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1_score": 1.0,
+            "support": 18
+          }
+        },
+        "classes": [
+          "NORMAL",
+          "ELEVATED",
+          "HIGH",
+          "CRITICAL"
+        ]
+      }
+    },
+    "regression": {
+      "RidgeRegression": {
+        "mae": 5.4295,
+        "rmse": 6.4601,
+        "r2_score": 0.9394
+      },
+      "RandomForestRegressor": {
+        "mae": 4.3791,
+        "rmse": 5.1337,
+        "r2_score": 0.9618
+      },
+      "XGBoostRegressor": {
+        "mae": 4.383,
+        "rmse": 5.2633,
+        "r2_score": 0.9598
+      }
+    },
+    "selected_classifier_metrics": {
+      "accuracy": 1.0,
+      "precision_macro": 1.0,
+      "precision_weighted": 1.0,
+      "recall_macro": 1.0,
+      "recall_weighted": 1.0,
+      "f1_macro": 1.0,
+      "f1_weighted": 1.0,
+      "confusion_matrix": [
+        [
+          9,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          18,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          45,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          18
+        ]
+      ],
+      "per_class": {
+        "NORMAL": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "support": 9
+        },
+        "ELEVATED": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "support": 18
+        },
+        "HIGH": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "support": 45
+        },
+        "CRITICAL": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "support": 18
+        }
+      },
+      "classes": [
+        "NORMAL",
+        "ELEVATED",
+        "HIGH",
+        "CRITICAL"
+      ]
+    },
+    "selected_regressor_metrics": {
+      "mae": 4.3791,
+      "rmse": 5.1337,
+      "r2_score": 0.9618
+    }
+  },
+  "feature_importances": {
+    "anomaly_score_raw": 0.161,
+    "criticality": 0.1283,
+    "message_type": 0.1167,
+    "integrity_failure_count": 0.0917,
+    "auth_failure_count": 0.0846,
+    "aad_tamper_count": 0.0776,
+    "transcript_anomaly_count": 0.0765,
+    "channel_bit_error_rate": 0.066,
+    "prior_security_events_window": 0.0622,
+    "replay_attempt_count": 0.0604,
+    "routing_error_count": 0.046,
+    "criticality_rank": 0.0176,
+    "observed_packet_rate_hz": 0.0059,
+    "latency_budget_ms": 0.0055
+  },
+  "safety_invariants": [
+    "AI model provides strictly ADVISORY threat level and score.",
+    "DO-178C Safety Policy Engine remains final authority for cryptographic profile selection.",
+    "Cryptographic downgrades are strictly prohibited regardless of AI predictions.",
+    "Low-confidence predictions trigger conservative deterministic safety fallbacks.",
+    "Zero private keys, secret keys, or raw plaintexts are accessible to AI models."
+  ]
+}

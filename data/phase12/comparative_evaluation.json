@@ -1,0 +1,46 @@
+{
+  "status": "SUCCESS",
+  "total_scenarios_evaluated": 10,
+  "total_steps_evaluated": 285,
+  "mode_comparisons": [
+    {
+      "mode_name": "MODE_A_STATIC",
+      "description": "Mode A: Static Heavy Post-Quantum Baseline (Fixed ADAPTIVE-CRITICAL)",
+      "total_cpu_time_ms": 412683.88,
+      "mean_latency_ms": 1448.0136,
+      "p95_latency_ms": 3919.0278,
+      "total_energy_uj": 413250.0,
+      "energy_savings_pct_vs_static": 0.0,
+      "cpu_time_savings_pct_vs_static": 0.0,
+      "total_profile_switches": 0,
+      "security_coverage_score": 100.0,
+      "deadline_violations": 4
+    },
+    {
+      "mode_name": "MODE_B_DETERMINISTIC",
+      "description": "Mode B: Static Deterministic Policy Engine (Phase 9B Instantaneous)",
+      "total_cpu_time_ms": 53936.46,
+      "mean_latency_ms": 189.2507,
+      "p95_latency_ms": 662.6153,
+      "total_energy_uj": 130805.0,
+      "energy_savings_pct_vs_static": 68.35,
+      "cpu_time_savings_pct_vs_static": 86.93,
+      "total_profile_switches": 142,
+      "security_coverage_score": 100.0,
+      "deadline_violations": 0
+    },
+    {
+      "mode_name": "MODE_C_AI_ASSISTED",
+      "description": "Mode C: Closed-Loop AI-Assisted Adaptive Intelligence with Hysteresis",
+      "total_cpu_time_ms": 19575.64,
+      "mean_latency_ms": 68.6865,
+      "p95_latency_ms": 526.1649,
+      "total_energy_uj": 202085.0,
+      "energy_savings_pct_vs_static": 51.1,
+      "cpu_time_savings_pct_vs_static": 95.26,
+      "total_profile_switches": 35,
+      "security_coverage_score": 100.0,
+      "deadline_violations": 0
+    }
+  ]
+}

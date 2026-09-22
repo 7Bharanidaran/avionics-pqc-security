@@ -9,4 +9,25 @@ import { Policy } from './pages/Policy'
 import { Security } from './pages/Security'
 import { Performance } from './pages/Performance'
 import { Experiments } from './pages/Experiments'
-export default function App() { const [page, setPage] = useState<Page>('overview'); const health = useApi(api.health); const state = health.loading ? 'loading' : health.data?.status === 'healthy' ? 'online' : 'failed'; const content = { overview: <Overview />, protocol: <Protocol />, pipeline: <Pipeline />, policy: <Policy />, security: <Security />, performance: <Performance />, experiments: <Experiments /> }[page]; return <AppLayout page={page} setPage={setPage} apiState={state}>{content}</AppLayout> }
+import { Evaluation } from './pages/Evaluation'
+import { Demonstration } from './pages/Demonstration'
+
+export default function App() {
+  const [page, setPage] = useState<Page>('overview')
+  const health = useApi(api.health)
+  const state = health.loading ? 'loading' : health.data?.status === 'healthy' ? 'online' : 'failed'
+  const content = {
+    overview: <Overview />,
+    protocol: <Protocol />,
+    pipeline: <Pipeline />,
+    policy: <Policy />,
+    security: <Security />,
+    performance: <Performance />,
+    experiments: <Experiments />,
+    evaluation: <Evaluation />,
+    demonstration: <Demonstration />,
+  }[page]
+  return <AppLayout page={page} setPage={setPage} apiState={state}>{content}</AppLayout>
+}
+
+

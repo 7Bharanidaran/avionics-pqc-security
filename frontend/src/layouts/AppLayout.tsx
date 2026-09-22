@@ -1,6 +1,16 @@
 import type { ReactNode } from 'react'
-import { Activity, FlaskConical, Gauge, Network, Route, ShieldCheck, SlidersHorizontal } from 'lucide-react'
+import { Activity, BarChart3, FlaskConical, Gauge, Network, Radio, Route, ShieldCheck, SlidersHorizontal } from 'lucide-react'
 import { Status } from '../components/common'
-export type Page = 'overview' | 'protocol' | 'pipeline' | 'policy' | 'security' | 'performance' | 'experiments'
-const nav: { id: Page; label: string; icon: typeof Network }[] = [{ id: 'overview', label: 'OVERVIEW', icon: Network }, { id: 'protocol', label: 'SECURE PROTOCOL', icon: ShieldCheck }, { id: 'pipeline', label: 'CRYPTOGRAPHIC PIPELINE', icon: Route }, { id: 'policy', label: 'ADAPTIVE POLICY', icon: SlidersHorizontal }, { id: 'security', label: 'SECURITY VALIDATION', icon: Activity }, { id: 'performance', label: 'PERFORMANCE', icon: Gauge }, { id: 'experiments', label: 'EXPERIMENTS', icon: FlaskConical }]
+export type Page = 'overview' | 'protocol' | 'pipeline' | 'policy' | 'security' | 'performance' | 'experiments' | 'evaluation' | 'demonstration'
+const nav: { id: Page; label: string; icon: typeof Network }[] = [
+  { id: 'overview', label: 'OVERVIEW', icon: Network },
+  { id: 'protocol', label: 'SECURE PROTOCOL', icon: ShieldCheck },
+  { id: 'pipeline', label: 'CRYPTOGRAPHIC PIPELINE', icon: Route },
+  { id: 'policy', label: 'ADAPTIVE POLICY', icon: SlidersHorizontal },
+  { id: 'security', label: 'SECURITY VALIDATION', icon: Activity },
+  { id: 'performance', label: 'PERFORMANCE', icon: Gauge },
+  { id: 'experiments', label: 'EXPERIMENTS', icon: FlaskConical },
+  { id: 'evaluation', label: 'RESEARCH EVALUATION', icon: BarChart3 },
+  { id: 'demonstration', label: 'DEMONSTRATION MODE', icon: Radio },
+]
 export function AppLayout({ page, setPage, apiState, children }: { page: Page; setPage: (page: Page) => void; apiState: 'loading' | 'online' | 'failed'; children: ReactNode }) { return <div className="shell"><aside className="sidebar"><div className="brand"><span>AVIONICS</span><strong>PQC SECURITY LAB</strong></div><nav aria-label="Primary navigation">{nav.map(({ id, label, icon: Icon }) => <button key={id} className={page === id ? 'active' : ''} onClick={() => setPage(id)}><Icon size={16} />{label}</button>)}</nav><div className="prototype">SIMULATION / RESEARCH PROTOTYPE</div></aside><main><header className="topbar"><div><div className="app-title">AVIONICS PQC SECURITY LAB</div><div className="app-subtitle">Hybrid Post-Quantum Secure Communication &amp; Security Validation</div></div><div className="connection"><span>API LINK</span><Status value={apiState === 'loading' ? 'CONNECTING' : apiState === 'online' ? 'ONLINE' : 'CONNECTION FAILED'} good={apiState === 'online'} /></div></header><div className="page-content">{children}</div><footer>SIMULATION / RESEARCH PROTOTYPE — NOT A CERTIFIED AIRCRAFT FLIGHT-CONTROL SYSTEM</footer></main></div> }

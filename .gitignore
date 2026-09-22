@@ -2,3 +2,5 @@ node_modules/
 __pycache__/
 *.pyc
 frontend/dist/
+.pytest_cache/
+.venv/

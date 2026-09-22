@@ -1,0 +1,61 @@
+{
+  "status": "SUCCESS",
+  "total_scenarios_evaluated": 12,
+  "total_steps_evaluated": 240,
+  "comparisons": [
+    {
+      "config_id": "BASELINE_STATIC",
+      "description": "Mode A: Static Heavy Post-Quantum Baseline (Fixed ADAPTIVE-CRITICAL)",
+      "total_scenarios": 12,
+      "total_steps": 240,
+      "total_cpu_time_ms": 6291.83,
+      "mean_latency_ms": 26.2159,
+      "p95_latency_ms": 520.216,
+      "total_energy_uj": 348000.0,
+      "energy_savings_pct_vs_static": 0.0,
+      "cpu_savings_pct_vs_static": 0.0,
+      "total_transitions": 12,
+      "safety_overrides_count": 0,
+      "downgrades_blocked_count": 0,
+      "security_violations": 0,
+      "deadline_violations": 0,
+      "security_coverage_pct": 100.0
+    },
+    {
+      "config_id": "BASELINE_RULE",
+      "description": "Mode B: Deterministic Rule-Based Adaptive Policy (Phase 9B Instantaneous)",
+      "total_scenarios": 12,
+      "total_steps": 240,
+      "total_cpu_time_ms": 9300.93,
+      "mean_latency_ms": 38.7539,
+      "p95_latency_ms": 520.2359,
+      "total_energy_uj": 172430.0,
+      "energy_savings_pct_vs_static": 50.45,
+      "cpu_savings_pct_vs_static": 0.0,
+      "total_transitions": 52,
+      "safety_overrides_count": 0,
+      "downgrades_blocked_count": 0,
+      "security_violations": 0,
+      "deadline_violations": 0,
+      "security_coverage_pct": 100.0
+    },
+    {
+      "config_id": "AI_ADAPTIVE",
+      "description": "Mode C: Closed-Loop AI-Assisted Adaptive Intelligence with Safety Constraints",
+      "total_scenarios": 12,
+      "total_steps": 240,
+      "total_cpu_time_ms": 7045.94,
+      "mean_latency_ms": 29.3581,
+      "p95_latency_ms": 66.8737,
+      "total_energy_uj": 161720.0,
+      "energy_savings_pct_vs_static": 53.53,
+      "cpu_savings_pct_vs_static": 0.0,
+      "total_transitions": 34,
+      "safety_overrides_count": 89,
+      "downgrades_blocked_count": 77,
+      "security_violations": 0,
+      "deadline_violations": 0,
+      "security_coverage_pct": 100.0
+    }
+  ]
+}

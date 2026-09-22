@@ -1,0 +1,91 @@
+{
+  "total_transitions_ai_adaptive": 34,
+  "total_transitions_rule_based": 52,
+  "total_transitions_static": 12,
+  "scenario_transitions": [
+    {
+      "scenario_id": "S01_NORMAL",
+      "ai_adaptive_transitions": 3,
+      "rule_based_transitions": 3,
+      "downgrades_held": 2,
+      "downgrades_executed": 1
+    },
+    {
+      "scenario_id": "S02_ELEVATED_THREAT",
+      "ai_adaptive_transitions": 3,
+      "rule_based_transitions": 3,
+      "downgrades_held": 2,
+      "downgrades_executed": 1
+    },
+    {
+      "scenario_id": "S03_HIGH_THREAT",
+      "ai_adaptive_transitions": 3,
+      "rule_based_transitions": 3,
+      "downgrades_held": 2,
+      "downgrades_executed": 1
+    },
+    {
+      "scenario_id": "S04_CRITICAL_THREAT",
+      "ai_adaptive_transitions": 3,
+      "rule_based_transitions": 3,
+      "downgrades_held": 2,
+      "downgrades_executed": 1
+    },
+    {
+      "scenario_id": "S05_THREAT_ESCALATION",
+      "ai_adaptive_transitions": 4,
+      "rule_based_transitions": 3,
+      "downgrades_held": 0,
+      "downgrades_executed": 0
+    },
+    {
+      "scenario_id": "S06_THREAT_RECOVERY",
+      "ai_adaptive_transitions": 3,
+      "rule_based_transitions": 3,
+      "downgrades_held": 4,
+      "downgrades_executed": 2
+    },
+    {
+      "scenario_id": "S07_LOW_CONFIDENCE",
+      "ai_adaptive_transitions": 3,
+      "rule_based_transitions": 3,
+      "downgrades_held": 2,
+      "downgrades_executed": 1
+    },
+    {
+      "scenario_id": "S08_CRITICAL_MESSAGE_LOW_AI_SCORE",
+      "ai_adaptive_transitions": 3,
+      "rule_based_transitions": 3,
+      "downgrades_held": 2,
+      "downgrades_executed": 1
+    },
+    {
+      "scenario_id": "S09_DOWNGRADE_ATTEMPT",
+      "ai_adaptive_transitions": 1,
+      "rule_based_transitions": 1,
+      "downgrades_held": 0,
+      "downgrades_executed": 0
+    },
+    {
+      "scenario_id": "S10_TELEMETRY_PERTURBATION",
+      "ai_adaptive_transitions": 1,
+      "rule_based_transitions": 3,
+      "downgrades_held": 0,
+      "downgrades_executed": 0
+    },
+    {
+      "scenario_id": "S11_RAPID_THREAT_OSCILLATION",
+      "ai_adaptive_transitions": 2,
+      "rule_based_transitions": 20,
+      "downgrades_held": 9,
+      "downgrades_executed": 0
+    },
+    {
+      "scenario_id": "S12_COMBINED_THREAT",
+      "ai_adaptive_transitions": 5,
+      "rule_based_transitions": 4,
+      "downgrades_held": 4,
+      "downgrades_executed": 2
+    }
+  ]
+}

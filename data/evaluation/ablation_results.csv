@@ -1,0 +1,6 @@
+config_id,name,description,total_steps,mean_latency_ms,total_energy_uj,total_transitions,safety_violations,safety_violation_rate_pct,safety_overrides,mean_security_margin_bits,accuracy_pct,f1_score
+CONFIG_A_NO_AI,Config A: NO_AI,Deterministic rule engine only without AI predictions.,240,1.0852,166270.0,52,0,0.0,0,209.1,64.17,1.0
+CONFIG_B_AI_NO_CONFIDENCE,Config B: AI_NO_CONFIDENCE,AI threat prediction directly without confidence weighting or safety policy.,240,0.5318,67180.0,24,53,22.08,0,149.9,64.17,1.0
+CONFIG_C_AI_WITH_CONFIDENCE,Config C: AI_WITH_CONFIDENCE,"AI threat prediction with confidence thresholding, but without safety policy.",240,0.8832,76040.0,43,53,22.08,0,155.7,64.17,1.0
+CONFIG_D_AI_SAFETY_POLICY,Config D: AI_SAFETY_POLICY,AI + Deterministic Safety Policy (instantaneous switching).,240,1.0573,141010.0,50,0,0.0,77,208.3,64.17,1.0
+CONFIG_E_FULL_SYSTEM,Config E: FULL_SYSTEM,Full System (AI + Anomaly + Confidence + Safety Policy + Hysteresis Anti-Oscillation).,240,0.7637,161720.0,34,0,0.0,89,218.9,64.17,1.0

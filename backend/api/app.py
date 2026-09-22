@@ -11,13 +11,20 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from backend.api.routes import (
+    ai_router,
     avionics_router,
     benchmarks_router,
+    crypto_constructions_router,
+    demonstration_router,
+    evaluation_router,
+    experiments_router,
     health_router,
     protocol_router,
     policy_router,
     security_router,
 )
+
+
 
 app = FastAPI(
     title="Avionics PQC Security Lab API",
@@ -51,9 +58,16 @@ app.add_middleware(
 app.include_router(health_router, prefix="/api")
 app.include_router(avionics_router, prefix="/api")
 app.include_router(protocol_router, prefix="/api")
+app.include_router(crypto_constructions_router, prefix="/api")
+app.include_router(experiments_router, prefix="/api")
 app.include_router(policy_router, prefix="/api")
 app.include_router(security_router, prefix="/api")
 app.include_router(benchmarks_router, prefix="/api")
+app.include_router(ai_router, prefix="/api")
+app.include_router(evaluation_router, prefix="/api")
+app.include_router(demonstration_router, prefix="/api")
+
+
 
 
 @app.get("/", tags=["Root"])

@@ -1,0 +1,4 @@
+config_id,description,total_scenarios,total_steps,total_cpu_time_ms,mean_latency_ms,p95_latency_ms,total_energy_uj,energy_savings_pct_vs_static,cpu_savings_pct_vs_static,total_transitions,safety_overrides_count,downgrades_blocked_count,security_violations,deadline_violations,security_coverage_pct
+BASELINE_STATIC,Mode A: Static Heavy Post-Quantum Baseline (Fixed ADAPTIVE-CRITICAL),12,240,6291.83,26.2159,520.216,348000.0,0.0,0.0,12,0,0,0,0,100.0
+BASELINE_RULE,Mode B: Deterministic Rule-Based Adaptive Policy (Phase 9B Instantaneous),12,240,9300.93,38.7539,520.2359,172430.0,50.45,0.0,52,0,0,0,0,100.0
+AI_ADAPTIVE,Mode C: Closed-Loop AI-Assisted Adaptive Intelligence with Safety Constraints,12,240,7045.94,29.3581,66.8737,161720.0,53.53,0.0,34,89,77,0,0,100.0

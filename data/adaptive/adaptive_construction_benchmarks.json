@@ -1,0 +1,410 @@
+{
+  "timestamp": "2026-09-21 18:15:15 UTC",
+  "environment": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python_version": "3.14.3",
+    "processor": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel"
+  },
+  "constructions": [
+    {
+      "construction_id": "ADAPTIVE-STANDARD-V1",
+      "security_level": "STANDARD",
+      "iterations": 3,
+      "handshake_latency_ms": {
+        "min_ms": 5.2114,
+        "max_ms": 5.6867,
+        "mean_ms": 5.4846,
+        "median_ms": 5.5556,
+        "stddev_ms": 0.2455,
+        "p95_ms": 5.6867,
+        "p99_ms": 5.6867
+      },
+      "encryption_latency_ms": {
+        "min_ms": 0.2364,
+        "max_ms": 0.2907,
+        "mean_ms": 0.2613,
+        "median_ms": 0.2569,
+        "stddev_ms": 0.0274,
+        "p95_ms": 0.2907,
+        "p99_ms": 0.2907
+      },
+      "decryption_latency_ms": {
+        "min_ms": 0.1971,
+        "max_ms": 0.2127,
+        "mean_ms": 0.2042,
+        "median_ms": 0.2027,
+        "stddev_ms": 0.0079,
+        "p95_ms": 0.2127,
+        "p99_ms": 0.2127
+      },
+      "total_roundtrip_latency_ms": {
+        "min_ms": 5.6992,
+        "max_ms": 6.1463,
+        "mean_ms": 5.9501,
+        "median_ms": 6.0047,
+        "stddev_ms": 0.2285,
+        "p95_ms": 6.1463,
+        "p99_ms": 6.1463
+      },
+      "sizes_and_overhead": {
+        "ciphertext_size_bytes": 324,
+        "nonce_size_bytes": 12,
+        "aad_size_bytes": 310,
+        "total_packet_overhead_bytes": 646
+      },
+      "primitives": {
+        "key_agreement": [
+          "X25519",
+          "ML-KEM-768"
+        ],
+        "authentication": [
+          "Ed25519"
+        ],
+        "kdf": "HKDF-SHA256",
+        "aead": "AES-256-GCM"
+      },
+      "success_rate_percent": 100.0
+    },
+    {
+      "construction_id": "ADAPTIVE-BALANCED-V1",
+      "security_level": "BALANCED",
+      "iterations": 3,
+      "handshake_latency_ms": {
+        "min_ms": 8.4022,
+        "max_ms": 10.3306,
+        "mean_ms": 9.5168,
+        "median_ms": 9.8175,
+        "stddev_ms": 0.9988,
+        "p95_ms": 10.3306,
+        "p99_ms": 10.3306
+      },
+      "encryption_latency_ms": {
+        "min_ms": 0.2531,
+        "max_ms": 0.3245,
+        "mean_ms": 0.29,
+        "median_ms": 0.2925,
+        "stddev_ms": 0.0358,
+        "p95_ms": 0.3245,
+        "p99_ms": 0.3245
+      },
+      "decryption_latency_ms": {
+        "min_ms": 0.1936,
+        "max_ms": 2.429,
+        "mean_ms": 0.9441,
+        "median_ms": 0.2097,
+        "stddev_ms": 1.286,
+        "p95_ms": 2.429,
+        "p99_ms": 2.429
+      },
+      "total_roundtrip_latency_ms": {
+        "min_ms": 10.3197,
+        "max_ms": 11.1557,
+        "mean_ms": 10.7509,
+        "median_ms": 10.7773,
+        "stddev_ms": 0.4186,
+        "p95_ms": 11.1557,
+        "p99_ms": 11.1557
+      },
+      "sizes_and_overhead": {
+        "ciphertext_size_bytes": 322,
+        "nonce_size_bytes": 12,
+        "aad_size_bytes": 342,
+        "total_packet_overhead_bytes": 676
+      },
+      "primitives": {
+        "key_agreement": [
+          "X25519",
+          "ML-KEM-1024"
+        ],
+        "authentication": [
+          "Ed25519"
+        ],
+        "kdf": "HKDF-SHA384",
+        "aead": "AES-256-GCM"
+      },
+      "success_rate_percent": 100.0
+    },
+    {
+      "construction_id": "ADAPTIVE-HIGH-ASSURANCE-V1",
+      "security_level": "HIGH_ASSURANCE",
+      "iterations": 3,
+      "handshake_latency_ms": {
+        "min_ms": 2600.6669,
+        "max_ms": 2792.3841,
+        "mean_ms": 2672.3987,
+        "median_ms": 2624.145,
+        "stddev_ms": 104.5714,
+        "p95_ms": 2792.3841,
+        "p99_ms": 2792.3841
+      },
+      "encryption_latency_ms": {
+        "min_ms": 0.3907,
+        "max_ms": 0.4406,
+        "mean_ms": 0.4077,
+        "median_ms": 0.3917,
+        "stddev_ms": 0.0285,
+        "p95_ms": 0.4406,
+        "p99_ms": 0.4406
+      },
+      "decryption_latency_ms": {
+        "min_ms": 0.2289,
+        "max_ms": 0.3486,
+        "mean_ms": 0.2888,
+        "median_ms": 0.2889,
+        "stddev_ms": 0.0599,
+        "p95_ms": 0.3486,
+        "p99_ms": 0.3486
+      },
+      "total_roundtrip_latency_ms": {
+        "min_ms": 2601.3964,
+        "max_ms": 2793.1244,
+        "mean_ms": 2673.0951,
+        "median_ms": 2624.7646,
+        "stddev_ms": 104.603,
+        "p95_ms": 2793.1244,
+        "p99_ms": 2793.1244
+      },
+      "sizes_and_overhead": {
+        "ciphertext_size_bytes": 324,
+        "nonce_size_bytes": 12,
+        "aad_size_bytes": 348,
+        "total_packet_overhead_bytes": 684
+      },
+      "primitives": {
+        "key_agreement": [
+          "X25519",
+          "ML-KEM-1024"
+        ],
+        "authentication": [
+          "Ed25519",
+          "SLH-DSA-SHAKE_128F"
+        ],
+        "kdf": "HKDF-SHA384",
+        "aead": "AES-256-GCM"
+      },
+      "success_rate_percent": 100.0
+    },
+    {
+      "construction_id": "ADAPTIVE-CRITICAL-V1",
+      "security_level": "CRITICAL",
+      "iterations": 3,
+      "handshake_latency_ms": {
+        "min_ms": 2237.7884,
+        "max_ms": 4932.5413,
+        "mean_ms": 3276.1256,
+        "median_ms": 2658.0471,
+        "stddev_ms": 1449.8066,
+        "p95_ms": 4932.5413,
+        "p99_ms": 4932.5413
+      },
+      "encryption_latency_ms": {
+        "min_ms": 0.3141,
+        "max_ms": 0.4151,
+        "mean_ms": 0.3727,
+        "median_ms": 0.3888,
+        "stddev_ms": 0.0524,
+        "p95_ms": 0.4151,
+        "p99_ms": 0.4151
+      },
+      "decryption_latency_ms": {
+        "min_ms": 0.204,
+        "max_ms": 0.308,
+        "mean_ms": 0.2537,
+        "median_ms": 0.2491,
+        "stddev_ms": 0.0522,
+        "p95_ms": 0.308,
+        "p99_ms": 0.308
+      },
+      "total_roundtrip_latency_ms": {
+        "min_ms": 2238.4263,
+        "max_ms": 4933.2644,
+        "mean_ms": 3276.752,
+        "median_ms": 2658.5652,
+        "stddev_ms": 1449.8808,
+        "p95_ms": 4933.2644,
+        "p99_ms": 4933.2644
+      },
+      "sizes_and_overhead": {
+        "ciphertext_size_bytes": 323,
+        "nonce_size_bytes": 12,
+        "aad_size_bytes": 374,
+        "total_packet_overhead_bytes": 709
+      },
+      "primitives": {
+        "key_agreement": [
+          "X25519",
+          "ML-KEM-1024"
+        ],
+        "authentication": [
+          "Ed25519",
+          "SLH-DSA-SHAKE_128F"
+        ],
+        "kdf": "HKDF-SHA512",
+        "aead": "AES-256-GCM"
+      },
+      "success_rate_percent": 100.0
+    }
+  ],
+  "criticality_policy_sweep": [
+    {
+      "criticality": "ROUTINE",
+      "threat_level": "NORMAL",
+      "selected_construction_id": "ADAPTIVE-STANDARD-V1",
+      "security_level": "STANDARD",
+      "status": "APPROVED",
+      "estimated_latency_ms": 0.95,
+      "downgrade_blocked": false,
+      "reason": "Selected ADAPTIVE-STANDARD-V1 (STANDARD) for ROUTINE traffic under NORMAL threat. All safety invariants and latency constraints are satisfied."
+    },
+    {
+      "criticality": "ROUTINE",
+      "threat_level": "ELEVATED",
+      "selected_construction_id": "ADAPTIVE-BALANCED-V1",
+      "security_level": "BALANCED",
+      "status": "APPROVED",
+      "estimated_latency_ms": 1.5,
+      "downgrade_blocked": false,
+      "reason": "Selected ADAPTIVE-BALANCED-V1 (BALANCED) for ROUTINE traffic under ELEVATED threat. All safety invariants and latency constraints are satisfied."
+    },
+    {
+      "criticality": "ROUTINE",
+      "threat_level": "HIGH",
+      "selected_construction_id": "ADAPTIVE-HIGH-ASSURANCE-V1",
+      "security_level": "HIGH_ASSURANCE",
+      "status": "APPROVED",
+      "estimated_latency_ms": 2318.0,
+      "downgrade_blocked": false,
+      "reason": "Selected ADAPTIVE-HIGH-ASSURANCE-V1 (HIGH_ASSURANCE) for ROUTINE traffic under HIGH threat. All safety invariants and latency constraints are satisfied."
+    },
+    {
+      "criticality": "ROUTINE",
+      "threat_level": "CRITICAL",
+      "selected_construction_id": "ADAPTIVE-CRITICAL-V1",
+      "security_level": "CRITICAL",
+      "status": "APPROVED",
+      "estimated_latency_ms": 2320.0,
+      "downgrade_blocked": false,
+      "reason": "Selected ADAPTIVE-CRITICAL-V1 (CRITICAL) for ROUTINE traffic under CRITICAL threat. All safety invariants and latency constraints are satisfied."
+    },
+    {
+      "criticality": "IMPORTANT",
+      "threat_level": "NORMAL",
+      "selected_construction_id": "ADAPTIVE-BALANCED-V1",
+      "security_level": "BALANCED",
+      "status": "APPROVED",
+      "estimated_latency_ms": 1.5,
+      "downgrade_blocked": false,
+      "reason": "Selected ADAPTIVE-BALANCED-V1 (BALANCED) for IMPORTANT traffic under NORMAL threat. All safety invariants and latency constraints are satisfied."
+    },
+    {
+      "criticality": "IMPORTANT",
+      "threat_level": "ELEVATED",
+      "selected_construction_id": "ADAPTIVE-BALANCED-V1",
+      "security_level": "BALANCED",
+      "status": "APPROVED",
+      "estimated_latency_ms": 1.5,
+      "downgrade_blocked": false,
+      "reason": "Selected ADAPTIVE-BALANCED-V1 (BALANCED) for IMPORTANT traffic under ELEVATED threat. All safety invariants and latency constraints are satisfied."
+    },
+    {
+      "criticality": "IMPORTANT",
+      "threat_level": "HIGH",
+      "selected_construction_id": "ADAPTIVE-HIGH-ASSURANCE-V1",
+      "security_level": "HIGH_ASSURANCE",
+      "status": "APPROVED",
+      "estimated_latency_ms": 2318.0,
+      "downgrade_blocked": false,
+      "reason": "Selected ADAPTIVE-HIGH-ASSURANCE-V1 (HIGH_ASSURANCE) for IMPORTANT traffic under HIGH threat. All safety invariants and latency constraints are satisfied."
+    },
+    {
+      "criticality": "IMPORTANT",
+      "threat_level": "CRITICAL",
+      "selected_construction_id": "ADAPTIVE-CRITICAL-V1",
+      "security_level": "CRITICAL",
+      "status": "APPROVED",
+      "estimated_latency_ms": 2320.0,
+      "downgrade_blocked": false,
+      "reason": "Selected ADAPTIVE-CRITICAL-V1 (CRITICAL) for IMPORTANT traffic under CRITICAL threat. All safety invariants and latency constraints are satisfied."
+    },
+    {
+      "criticality": "CRITICAL",
+      "threat_level": "NORMAL",
+      "selected_construction_id": "ADAPTIVE-HIGH-ASSURANCE-V1",
+      "security_level": "HIGH_ASSURANCE",
+      "status": "APPROVED",
+      "estimated_latency_ms": 2318.0,
+      "downgrade_blocked": false,
+      "reason": "Selected ADAPTIVE-HIGH-ASSURANCE-V1 (HIGH_ASSURANCE) for CRITICAL traffic under NORMAL threat. All safety invariants and latency constraints are satisfied."
+    },
+    {
+      "criticality": "CRITICAL",
+      "threat_level": "ELEVATED",
+      "selected_construction_id": "ADAPTIVE-HIGH-ASSURANCE-V1",
+      "security_level": "HIGH_ASSURANCE",
+      "status": "APPROVED",
+      "estimated_latency_ms": 2318.0,
+      "downgrade_blocked": false,
+      "reason": "Selected ADAPTIVE-HIGH-ASSURANCE-V1 (HIGH_ASSURANCE) for CRITICAL traffic under ELEVATED threat. All safety invariants and latency constraints are satisfied."
+    },
+    {
+      "criticality": "CRITICAL",
+      "threat_level": "HIGH",
+      "selected_construction_id": "ADAPTIVE-HIGH-ASSURANCE-V1",
+      "security_level": "HIGH_ASSURANCE",
+      "status": "APPROVED",
+      "estimated_latency_ms": 2318.0,
+      "downgrade_blocked": false,
+      "reason": "Selected ADAPTIVE-HIGH-ASSURANCE-V1 (HIGH_ASSURANCE) for CRITICAL traffic under HIGH threat. All safety invariants and latency constraints are satisfied."
+    },
+    {
+      "criticality": "CRITICAL",
+      "threat_level": "CRITICAL",
+      "selected_construction_id": "ADAPTIVE-CRITICAL-V1",
+      "security_level": "CRITICAL",
+      "status": "APPROVED",
+      "estimated_latency_ms": 2320.0,
+      "downgrade_blocked": false,
+      "reason": "Selected ADAPTIVE-CRITICAL-V1 (CRITICAL) for CRITICAL traffic under CRITICAL threat. All safety invariants and latency constraints are satisfied."
+    },
+    {
+      "criticality": "SAFETY_CRITICAL",
+      "threat_level": "NORMAL",
+      "selected_construction_id": "ADAPTIVE-CRITICAL-V1",
+      "security_level": "CRITICAL",
+      "status": "APPROVED",
+      "estimated_latency_ms": 2320.0,
+      "downgrade_blocked": false,
+      "reason": "Selected ADAPTIVE-CRITICAL-V1 (CRITICAL) for SAFETY_CRITICAL traffic under NORMAL threat. All safety invariants and latency constraints are satisfied."
+    },
+    {
+      "criticality": "SAFETY_CRITICAL",
+      "threat_level": "ELEVATED",
+      "selected_construction_id": "ADAPTIVE-CRITICAL-V1",
+      "security_level": "CRITICAL",
+      "status": "APPROVED",
+      "estimated_latency_ms": 2320.0,
+      "downgrade_blocked": false,
+      "reason": "Selected ADAPTIVE-CRITICAL-V1 (CRITICAL) for SAFETY_CRITICAL traffic under ELEVATED threat. All safety invariants and latency constraints are satisfied."
+    },
+    {
+      "criticality": "SAFETY_CRITICAL",
+      "threat_level": "HIGH",
+      "selected_construction_id": "ADAPTIVE-CRITICAL-V1",
+      "security_level": "CRITICAL",
+      "status": "APPROVED",
+      "estimated_latency_ms": 2320.0,
+      "downgrade_blocked": false,
+      "reason": "Selected ADAPTIVE-CRITICAL-V1 (CRITICAL) for SAFETY_CRITICAL traffic under HIGH threat. All safety invariants and latency constraints are satisfied."
+    },
+    {
+      "criticality": "SAFETY_CRITICAL",
+      "threat_level": "CRITICAL",
+      "selected_construction_id": "ADAPTIVE-CRITICAL-V1",
+      "security_level": "CRITICAL",
+      "status": "APPROVED",
+      "estimated_latency_ms": 2320.0,
+      "downgrade_blocked": false,
+      "reason": "Selected ADAPTIVE-CRITICAL-V1 (CRITICAL) for SAFETY_CRITICAL traffic under CRITICAL threat. All safety invariants and latency constraints are satisfied."
+    }
+  ]
+}

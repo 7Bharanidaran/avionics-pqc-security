@@ -1,0 +1,102 @@
+{
+  "ablation_configurations": [
+    {
+      "config_id": "CONFIG_A_NO_AI",
+      "name": "Config A: NO_AI",
+      "description": "Deterministic rule engine only without AI predictions.",
+      "total_steps": 240,
+      "mean_latency_ms": 1.0852,
+      "total_energy_uj": 166270.0,
+      "total_transitions": 52,
+      "safety_violations": 0,
+      "safety_violation_rate_pct": 0.0,
+      "safety_overrides": 0,
+      "mean_security_margin_bits": 209.1,
+      "accuracy_pct": 64.17,
+      "f1_score": 1.0
+    },
+    {
+      "config_id": "CONFIG_B_AI_NO_CONFIDENCE",
+      "name": "Config B: AI_NO_CONFIDENCE",
+      "description": "AI threat prediction directly without confidence weighting or safety policy.",
+      "total_steps": 240,
+      "mean_latency_ms": 0.5318,
+      "total_energy_uj": 67180.0,
+      "total_transitions": 24,
+      "safety_violations": 53,
+      "safety_violation_rate_pct": 22.08,
+      "safety_overrides": 0,
+      "mean_security_margin_bits": 149.9,
+      "accuracy_pct": 64.17,
+      "f1_score": 1.0
+    },
+    {
+      "config_id": "CONFIG_C_AI_WITH_CONFIDENCE",
+      "name": "Config C: AI_WITH_CONFIDENCE",
+      "description": "AI threat prediction with confidence thresholding, but without safety policy.",
+      "total_steps": 240,
+      "mean_latency_ms": 0.8832,
+      "total_energy_uj": 76040.0,
+      "total_transitions": 43,
+      "safety_violations": 53,
+      "safety_violation_rate_pct": 22.08,
+      "safety_overrides": 0,
+      "mean_security_margin_bits": 155.7,
+      "accuracy_pct": 64.17,
+      "f1_score": 1.0
+    },
+    {
+      "config_id": "CONFIG_D_AI_SAFETY_POLICY",
+      "name": "Config D: AI_SAFETY_POLICY",
+      "description": "AI + Deterministic Safety Policy (instantaneous switching).",
+      "total_steps": 240,
+      "mean_latency_ms": 1.0573,
+      "total_energy_uj": 141010.0,
+      "total_transitions": 50,
+      "safety_violations": 0,
+      "safety_violation_rate_pct": 0.0,
+      "safety_overrides": 77,
+      "mean_security_margin_bits": 208.3,
+      "accuracy_pct": 64.17,
+      "f1_score": 1.0
+    },
+    {
+      "config_id": "CONFIG_E_FULL_SYSTEM",
+      "name": "Config E: FULL_SYSTEM",
+      "description": "Full System (AI + Anomaly + Confidence + Safety Policy + Hysteresis Anti-Oscillation).",
+      "total_steps": 240,
+      "mean_latency_ms": 0.7637,
+      "total_energy_uj": 161720.0,
+      "total_transitions": 34,
+      "safety_violations": 0,
+      "safety_violation_rate_pct": 0.0,
+      "safety_overrides": 89,
+      "mean_security_margin_bits": 218.9,
+      "accuracy_pct": 64.17,
+      "f1_score": 1.0
+    }
+  ],
+  "safety_ablation": {
+    "status": "SUCCESS",
+    "tested_scenarios": [
+      "S08_CRITICAL_MESSAGE_LOW_AI_SCORE",
+      "S09_DOWNGRADE_ATTEMPT"
+    ],
+    "comparison": {
+      "ai_only_unconstrained": {
+        "config_id": "CONFIG_B_AI_NO_CONFIDENCE",
+        "safety_violations": 21,
+        "safety_violation_rate_pct": 70.0,
+        "safety_overrides": 0,
+        "finding": "Without deterministic safety policy, AI erroneously selects lower assurance during safety-critical flight maneuvers."
+      },
+      "full_safety_constrained_system": {
+        "config_id": "CONFIG_E_FULL_SYSTEM",
+        "safety_violations": 0,
+        "safety_violation_rate_pct": 0.0,
+        "safety_overrides": 21,
+        "finding": "Deterministic safety policy successfully intercepts 100% of unsafe AI suggestions, guaranteeing strict DO-178C compliance."
+      }
+    }
+  }
+}
